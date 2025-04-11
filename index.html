@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slide Romântico</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #3a0ca3, #7209b7);
+      overflow: hidden;
+    }
+
+    .slideshow-container {
+      position: relative;
+      max-width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .mySlides {
+      display: none;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      animation: fade 1s ease-in-out;
+    }
+
+    .mySlides img, .mySlides video, .mySlides iframe {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @keyframes fade {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .dots {
+      text-align: center;
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+    }
+
+    .dot {
+      height: 12px;
+      width: 12px;
+      margin: 0 5px;
+      background-color: rgba(255, 255, 255, 0.6);
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+    }
+
+    .active {
+      background-color: #fff;
+    }
+
+    .frase {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      padding-top: 20px;
+      text-align: center;
+      font-size: 2rem;
+      font-family: 'Great Vibes', cursive;
+      color: white;
+      text-shadow: 2px 2px 8px black;
+      animation: fade 1s ease-in-out;
+      z-index: 2;
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 30px;
+      width: 100%;
+      text-align: center;
+      color: white;
+      font-size: 1.5rem;
+      font-family: 'Great Vibes', cursive;
+      text-shadow: 2px 2px 5px black;
+    }
+
+    .replay-btn {
+      position: absolute;
+      bottom: 80px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 10px 30px;
+      background: #0ff;
+      color: #000;
+      font-size: 1.2rem;
+      font-weight: bold;
+      font-family: 'Segoe UI', sans-serif;
+      cursor: pointer;
+      border: 2px solid #fff;
+      border-radius: 10px;
+      text-shadow: 0 0 5px #fff;
+      box-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .replay-btn:hover {
+      background: #fff;
+      color: #0ff;
+      box-shadow: 0 0 20px #fff, 0 0 30px #0ff;
+    }
+  </style>
+</head>
+<body>
+    <audio autoplay loop>
+        <source src="mp4/audio.mp4" type="audio/mpeg">
+      </audio>
+  <div class="slideshow-container">
+    <div class="mySlides fade">
+      <img src="img/1ano.jpg" alt="Slide 1">
+    </div>
+
+    <div class="mySlides fade">
+      <img src="img/fundo.gif" alt="Gif 1">
+      <div class="frase" data-text="Às vezes me pergunto como descrever quem sou... E a verdade é que sou apenas uma romântica incorrigível, com um coração sincero e cheio de amor por você. Tudo que faço é com a intenção de te ver sorrir. Sonho em dividir cada pedacinho da minha vida com você, porque a cada momento que passo ao seu lado, sinto que o amor verdadeiro realmente existe – e ele mora dentro de mim, por você."></div>
+    </div>
+
+    <div class="mySlides fade">
+      <img src="img/fundo 4seg.gif" alt="Slide 2">
+    </div>
+
+    <div class="mySlides fade">
+      <img src="img/fundo.gif" alt="Slide 3">
+      <div class="frase" data-text="Você é, sem dúvida, a pessoa mais encantadora que já conheci. Tudo em você me inspira – sua força, sua dedicação, sua maneira de transformar até os dias mais simples em algo bonito. A tua luz me guia, teu carinho me acalma, e tua beleza vai muito além do que os olhos podem ver. Amo cada detalhe seu, de corpo e alma, e agradeço por você ser meu amor💖."></div>
+    </div>
+
+    <div class="mySlides fade">
+      <img src="img/fundo 4seg.gif" alt="Slide 4">
+    </div>
+
+    <div class="mySlides fade">
+      <img src="img/timido.jpeg" alt="Gif 2">
+      <div class="frase" data-text="Meu amor, estar com você é o que faz meu mundo girar mais bonito. Não há palavras que descrevam a felicidade que você trouxe pra minha vida. Te amar é fácil, natural... como respirar. E hoje, no nosso primeiro ano completo juntas, meu coração transborda de gratidão por cada momento ao seu lado. Que esse seja só o primeiro capítulo de uma linda história que ainda vamos escrever juntas, lado a lado. Eu te amo, hoje e sempre💖💖"></div>
+    </div>
+
+    <div class="mySlides fade">
+      <img src="img/fundo 4seg.gif" alt="Slide 5">
+    </div>
+
+    <div class="mySlides fade">
+      <img src="img/love.jpg" alt="Slide 6">
+      <div class="frase" data-text="Como diriam os poetas apaixonados: 'Se eu te amo, cuido de você sem pedir nada'. E é assim que eu amo você: com entrega, carinho e uma vontade imensa de te fazer feliz todos os dias da minha vida."></div>
+      <div class="footer">Ass: Vanessa💋</div>
+      <button class="replay-btn" onclick="window.close()">Sair</button>
+    </div>
+
+    <div class="dots">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </div>
+
+  <script>
+    let slideIndex = 0;
+    const slides = document.getElementsByClassName("mySlides");
+    const dots = document.getElementsByClassName("dot");
+
+    function typeWriter(element, text, i = 0) {
+      if (i < text.length) {
+        element.innerHTML += text.charAt(i);
+        setTimeout(() => typeWriter(element, text, i + 1), 80);
+      }
+    }
+
+    function showSlides() {
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+        const frase = slides[i].querySelector('.frase');
+        if (frase) frase.innerHTML = "";
+      }
+
+      slideIndex++;
+      if (slideIndex > slides.length) { slideIndex = 1; }
+
+      const currentSlide = slides[slideIndex - 1];
+      const fraseEl = currentSlide.querySelector('.frase');
+      let delay = fraseEl ? 40000 : 4000;
+
+      currentSlide.style.display = "block";
+
+      if (fraseEl) {
+        const text = fraseEl.getAttribute('data-text');
+        typeWriter(fraseEl, text);
+      }
+
+      for (let i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      dots[slideIndex - 1].className += " active";
+
+      setTimeout(showSlides, delay);
+    }
+
+    function restartSlides() {
+      slideIndex = 0;
+      showSlides();
+    }
+
+    showSlides();
+  </script>
+</body>
+</html>
