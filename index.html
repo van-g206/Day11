@@ -105,6 +105,17 @@
       color: #0ff;
       box-shadow: 0 0 20px #fff, 0 0 30px #0ff;
     }
+
+    .mocha {
+      display: none;
+      position: absolute;
+      bottom: 140px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      animation: fade 1s ease-in-out;
+}
+
   </style>
 </head>
 <body>
@@ -187,7 +198,7 @@
       const currentSlide = slides[slideIndex - 1];
       const fraseEl = currentSlide.querySelector('.frase');
       const mocha = currentSlide.querySelector('.mocha');
-      let delay = fraseEl ? 20000 : 3000;
+      let delay = fraseEl ? 20000 : 2050;
 
       currentSlide.style.display = "block";
 
