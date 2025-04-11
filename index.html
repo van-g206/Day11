@@ -143,7 +143,7 @@
     <div class="mySlides fade">
       <img src="https://i.pinimg.com/736x/86/8f/5b/868f5b14e408def05fdfddae9dfcc703.jpg" >
       <div class="frase" data-text="Como diriam os poetas apaixonados: 'Se eu te amo, cuido de você sem pedir nada'. E é assim que eu amo você: com entrega, carinho e uma vontade imensa de te fazer feliz todos os dias da minha vida."></div>
-      <div class="gif" ><img src="https://i.pinimg.com/originals/c7/b2/fc/c7b2fca5b410b5409f5e686c62650c5b.gif" ></div>
+      <div class="mocha" ><img src="https://i.pinimg.com/originals/c7/b2/fc/c7b2fca5b410b5409f5e686c62650c5b.gif" ></div>
       <button class="replay-btn" onclick="window.close()">Sair</button>
     </div>
 
@@ -163,10 +163,12 @@
     const slides = document.getElementsByClassName("mySlides");
     const dots = document.getElementsByClassName("dot");
 
-    function typeWriter(element, text, i = 0) {
+    function typeWriter(element, text, i = 0, callback) {
       if (i < text.length) {
         element.innerHTML += text.charAt(i);
-        setTimeout(() => typeWriter(element, text, i + 1), 80);
+        setTimeout(() => typeWriter(element, text, i + 1, callback), 80);
+      } else if (callback) {
+        callback();
       }
     }
 
@@ -175,6 +177,8 @@
         slides[i].style.display = "none";
         const frase = slides[i].querySelector('.frase');
         if (frase) frase.innerHTML = "";
+        const mocha = slides[i].querySelector('.mocha');
+        if (mocha) mocha.style.display = "none";
       }
 
       slideIndex++;
@@ -182,13 +186,18 @@
 
       const currentSlide = slides[slideIndex - 1];
       const fraseEl = currentSlide.querySelector('.frase');
-      let delay = fraseEl ? 40000 : 3000; 
+      const mocha = currentSlide.querySelector('.mocha');
+      let delay = fraseEl ? 20000 : 4000;
 
       currentSlide.style.display = "block";
 
       if (fraseEl) {
         const text = fraseEl.getAttribute('data-text');
-        typeWriter(fraseEl, text);
+        typeWriter(fraseEl, text, 0, () => {
+          if (mocha) mocha.style.display = "block";
+        });
+      } else if (mocha) {
+        mocha.style.display = "block";
       }
 
       for (let i = 0; i < dots.length; i++) {
@@ -203,6 +212,7 @@
       slideIndex = 0;
       showSlides();
     }
+
     showSlides();
   </script>
 </body>
